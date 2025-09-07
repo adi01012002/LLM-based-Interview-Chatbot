@@ -23,8 +23,8 @@ const HomePage = () => {
   const fetchRolesAndDomains = async () => {
     try {
       const [rolesResponse, domainsResponse] = await Promise.all([
-        axios.get("/api/roles"),
-        axios.get("/api/domains"),
+        axios.get("https://llm-based-interview-chatbot.onrender.com/api/roles"),
+        axios.get("https://llm-based-interview-chatbot.onrender.com/api/domains"),
       ]);
 
       setRoles(rolesResponse.data.roles);
@@ -48,7 +48,7 @@ const HomePage = () => {
     setError("");
 
     try {
-      const response = await axios.post("/api/interview/start", formData);
+      const response = await axios.post("https://llm-based-interview-chatbot.onrender.com/api/interview/start", formData);
       const { interviewId } = response.data;
       navigate(`/interview/${interviewId}`);
     } catch (err) {

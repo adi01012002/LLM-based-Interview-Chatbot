@@ -20,7 +20,7 @@ const InterviewPage = () => {
   useEffect(() => {
     const fetchInterview = async () => {
       try {
-        const response = await axios.get(`/api/interview/${id}/status`);
+        const response = await axios.get(`https://llm-based-interview-chatbot.onrender.com/api/interview/${id}/status`);
         interviewData.current = response.data;
         setQuestionCount(response.data.questionCount ?? 1);
         const initialMessage = {
@@ -44,7 +44,7 @@ const InterviewPage = () => {
     setError("");
   
     try {
-      const answerResponse = await axios.post(`/api/interview/${id}/answer`, {
+      const answerResponse = await axios.post(`https://llm-based-interview-chatbot.onrender.com/api/interview/${id}/answer`, {
         answer: userInput,
         requestMore,
       });
@@ -67,7 +67,7 @@ const InterviewPage = () => {
         }
       } else {
         // fetch status to get next question
-        const statusResponse = await axios.get(`/api/interview/${id}/status`);
+        const statusResponse = await axios.get(`https://llm-based-interview-chatbot.onrender.com/api/interview/${id}/status`);
         interviewData.current = statusResponse.data;
 
       const feedback = answerResponse.data.lastEvaluation;
