@@ -1,0 +1,39 @@
+{
+  "name": "interview-simulator",
+  "version": "1.0.0",
+  "description": "AI-powered Interview Simulator using LangGraph and Gemini",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js",
+    "start": "node src/index.js",
+    "build": "cd frontend && npm run build",
+    "install-frontend": "cd frontend && npm install",
+    "setup": "node setup.js",
+    "test-setup": "node test-setup.js",
+    "start-all": "../start-dev.sh"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.2.36",
+    "@langchain/google-genai": "^0.0.14",
+    "@langchain/langgraph": "^0.0.26",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "langchain": "^0.1.37",
+    "pdfkit": "^0.14.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "interview",
+    "ai",
+    "langgraph",
+    "gemini",
+    "simulator"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
