@@ -45,7 +45,7 @@ An intelligent interview practice platform powered by **LangGraph** and **Google
 src/
 ├── index.js              # Main server entry point
 ├── server.js             # Express API with RESTful endpoints
-└── interviewWorkflow.js  # LangGraph state machine implementation
+└── simpleInterview.js  # implementation
 ```
 
 ### Frontend (React + Vite)
@@ -154,9 +154,9 @@ npm run dev
 - `GET /api/domains` - Get available domains
 - `GET /api/health` - Health check
 
-## 🧠 LangGraph Workflow
+## 🧠 Workflow
 
-The interview process is managed by a sophisticated LangGraph state machine:
+The interview process is managed by a sophisticated machine:
 
 ```
 [Initialize] → [Generate Question] → [Wait for Answer] → [Evaluate Answer] → [Generate Feedback] → [Check Completion] → [Generate Summary]
@@ -226,28 +226,8 @@ NODE_ENV=development                     # Optional
 
 ## 🚀 Deployment
 
-### Heroku
 
 ```bash
-# Create Heroku app
-heroku create your-app-name
-
-# Set environment variables
-heroku config:set GOOGLE_API_KEY=your_key
-
-# Deploy
-git push heroku main
-```
-
-### Docker
-
-```bash
-# Build image
-docker build -t interview-simulator .
-
-# Run container
-docker run -p 3001:3001 -e GOOGLE_API_KEY=your_key interview-simulator
-```
 
 ### Vercel/Netlify
 
