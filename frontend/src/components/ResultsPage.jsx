@@ -23,7 +23,7 @@ const ResultsPage = () => {
 
   const fetchResults = async () => {
     try {
-      const response = await axios.get(`/api/interview/${id}/results`);
+      const response = await axios.get(`https://llm-based-interview-chatbot.onrender.com/api/interview/${id}/results`);
       setResults(response.data);
     } catch (err) {
       setError(err.response?.data?.error || "Failed to fetch results");
@@ -34,7 +34,7 @@ const ResultsPage = () => {
 
   const handleExportPDF = async () => {
     try {
-      const response = await axios.get(`/api/interview/${id}/export/pdf`, {
+      const response = await axios.get(`https://llm-based-interview-chatbot.onrender.com/api/interview/${id}/export/pdf`, {
         responseType: "blob",
       });
 
